@@ -13,3 +13,4 @@ The approach used for this implementation was as follows:
 --The data returned from the Foursquare api is then parsed using Volley's Json helper functions and the org.json library into the VenueModel
 --After the data is fully translated into the model it is used to populate a List that is passed to the RecyclerView adapter for presentation
 --The images are adjusted, displayed and its cache handled using the [Picasso image library](http://square.github.io/picasso/).
+ 
