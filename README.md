@@ -1,7 +1,4 @@
-# product-developer-test
-whitbread-eos recruitment test
-
-This was made as a part of the Whitbread Android Product Developer recruitment process according to the instructions present [here](https://github.com/whitbread-eos/product-developer-test/blob/master/README.md)
+Foursquare api Android example
 
 This implementation makes use of a SearchView in the toolbar that can be used to find what are the recommended venues around the location inserted in the search field.
 The search results are then displayed in a vertically scrolling list, with the venue name, rating and icon.
