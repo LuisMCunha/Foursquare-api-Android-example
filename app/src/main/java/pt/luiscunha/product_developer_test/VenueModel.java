@@ -8,7 +8,7 @@ public class VenueModel {
   private String venueName;
   private String venueRating;
   private String venueIcon;
-  private final String venueIconSize = "64";
+  private final static String venueIconSize = "64";
 
   public VenueModel(String venueName, String venueRating, JSONArray venueCategories) {
     this.venueName = venueName;
