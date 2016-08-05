@@ -1,11 +1,7 @@
-# product-developer-test
-whitbread-eos recruitment test
-
-This was made as a part of the Whitbread Android Product Developer recruitment process according to the instructions present [here](https://github.com/whitbread-eos/product-developer-test/blob/master/README.md)
+Foursquare api Android example
 
 This implementation makes use of a SearchView in the toolbar that can be used to find what are the recommended venues around the location inserted in the search field.
 The search results are then displayed in a vertically scrolling list, with the venue name, rating and icon.
-
 
 The approach used for this implementation was as follows:
 
@@ -18,3 +14,4 @@ The approach used for this implementation was as follows:
 -After the data is fully translated into the model it is used to populate a List that is passed to the RecyclerView adapter for presentation
 
 -The images are adjusted, displayed and its cache handled using the [Picasso image library](http://square.github.io/picasso/).
+ 
