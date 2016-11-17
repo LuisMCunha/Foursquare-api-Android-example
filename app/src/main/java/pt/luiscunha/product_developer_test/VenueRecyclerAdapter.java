@@ -57,13 +57,10 @@ public class VenueRecyclerAdapter extends RecyclerView.Adapter<VenueRecyclerAdap
             .load(selectedVenue.getVenueIcon())
             .into(finalHolder.VenueIcon, new Callback() {
               @Override
-              public void onSuccess() {
-
-              }
+              public void onSuccess() {}
 
               @Override
-              public void onError() {
-              }
+              public void onError() {}
             });
       }
     });
