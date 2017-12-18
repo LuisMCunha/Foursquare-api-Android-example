@@ -32,7 +32,7 @@ public class MainControllerImpl implements MainController {
     RequestQueue requestQueue = Volley.newRequestQueue(context);
     String foursquareRequestUrl = null;
     try {
-      foursquareRequestUrl = "https://api.foursquare.com/v2/venues/explore?client_id=YFRT0F0EKMLCUYYQO04YWQMUN15MXZH2KEXU5ZGN2D1QV0CF&client_secret=I2NQKHQPPL3DCCBTWU4PP4ZF2WJMGYZEOXIVXSHF0K330RJA&v=20130815%20&near=" + URLEncoder.encode(area, "UTF-8");
+      foursquareRequestUrl = "YOUR_FOURSQUARE_API_URL" + URLEncoder.encode(area, "UTF-8");
     } catch (UnsupportedEncodingException e) {
       Toast.makeText(context, context.getResources().getString(R.string.venue_search_invalid_error), Toast.LENGTH_SHORT).show();
     }
