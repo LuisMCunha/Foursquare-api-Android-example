@@ -35,16 +35,15 @@ public class VenueRecyclerAdapter extends RecyclerView.Adapter<VenueRecyclerAdap
   }
 
   @Override
-  public void onBindViewHolder(ViewHolder holder, int position) {
+  public void onBindViewHolder(final ViewHolder holder, int position) {
 
     final VenueModel selectedVenue = mVenues.get(position);
-    final ViewHolder finalHolder = holder;
 
     holder.VenueName.setText(selectedVenue.getVenueName());
     holder.VenueRating.setText(selectedVenue.getVenueRating());
     Picasso.with(mContext).load(selectedVenue.getVenueIcon())
         //attempt to load the image from cache
-        .networkPolicy(NetworkPolicy.OFFLINE).fit().into(finalHolder.VenueIcon, new Callback() {
+        .networkPolicy(NetworkPolicy.OFFLINE).fit().into(holder.VenueIcon, new Callback() {
       @Override
       public void onSuccess() {
 
@@ -55,7 +54,7 @@ public class VenueRecyclerAdapter extends RecyclerView.Adapter<VenueRecyclerAdap
         //Try again online if cache failed
         Picasso.with(mContext)
             .load(selectedVenue.getVenueIcon())
-            .into(finalHolder.VenueIcon, new Callback() {
+            .into(holder.VenueIcon, new Callback() {
               @Override
               public void onSuccess() {}
 

@@ -1,19 +1,19 @@
 package pt.luiscunha.product_developer_test;
 
 import android.app.SearchManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.view.*;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-  private List<VenueModel> venuesList;
+  private ArrayList<VenueModel> venuesList;
   private RecyclerView.Adapter venuesRecyclerAdapter;
   private MainController mainController;
 
@@ -25,10 +25,9 @@ public class MainActivity extends AppCompatActivity {
     venuesList = new ArrayList<>();
     mainController = new MainControllerImpl();
 
-    RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.venues_recycler_view);
+    RecyclerView mRecyclerView = findViewById(R.id.venues_recycler_view);
     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 
-    assert mRecyclerView != null;
     mRecyclerView.setLayoutManager(linearLayoutManager);
     venuesRecyclerAdapter = new VenueRecyclerAdapter(venuesList, MainActivity.this);
     mRecyclerView.setAdapter(venuesRecyclerAdapter);
@@ -43,7 +42,11 @@ public class MainActivity extends AppCompatActivity {
     final MenuItem searchMenuItem = menu.findItem(R.id.action_search);
     final SearchView searchView = (SearchView) searchMenuItem.getActionView();
     SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
-    searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
+    if (searchManager != null) {
+      searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+    }
+
     searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
       @Override

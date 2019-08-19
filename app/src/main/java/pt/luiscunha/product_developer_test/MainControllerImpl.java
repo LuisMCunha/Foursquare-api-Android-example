@@ -13,13 +13,13 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.List;
+import java.util.ArrayList;
 
 public class MainControllerImpl implements MainController {
 
   private ProgressDialog loadingDialog;
 
-  public void getVenuesData(String area, final List venuesList, final RecyclerView.Adapter venuesRecyclerAdapter, Context mainContext) {
+  public void getVenuesData(String area, final ArrayList<VenueModel> venuesList, final RecyclerView.Adapter venuesRecyclerAdapter, Context mainContext) {
 
     final Context context = mainContext;
 
